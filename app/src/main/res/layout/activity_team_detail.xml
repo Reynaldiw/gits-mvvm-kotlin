@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/nsvDetailClub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mainWhite"
+        android:overScrollMode="never">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimens_16dp"
+            tools:context=".presentation.detail.DetailFootballClubActivity">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/imgTeamLogo"
+                android:layout_width="@dimen/dimen_100dp"
+                android:layout_height="@dimen/dimen_120dp"
+                android:layout_marginTop="@dimen/dimens_16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tvTeamName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_8dp"
+                android:layout_marginLeft="@dimen/dimen_8dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center_horizontal"
+                android:text="@{item.teamName}"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgTeamLogo" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tvTeamDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_8dp"
+                android:layout_marginTop="@dimen/dimens_16dp"
+                android:layout_marginEnd="@dimen/dimen_8dp"
+                android:gravity="center_horizontal"
+                android:text="@{item.teamDesc}"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTeamName" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <data>
+
+        <variable
+            name="item"
+            type="id.gits.gitsmvvmkotlin.data.model.Team" />
+    </data>
+
+</layout>

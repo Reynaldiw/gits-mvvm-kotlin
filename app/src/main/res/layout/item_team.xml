@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="userActionListener"
+            type="id.gits.gitsmvvmkotlin.mvvm.teams.TeamItemUserActionListener" />
+
+        <variable
+            name="team"
+            type="id.gits.gitsmvvmkotlin.data.model.Team" />
+
+    </data>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:onClick="@{()-> userActionListener.onItemTeamClicked(team)}"
+    android:layout_margin="@dimen/dimens_16dp">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/imgTeamLogo"
+        android:layout_width="@dimen/dimen_100dp"
+        android:layout_height="@dimen/dimen_120dp"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tvTeamName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text="@{team.teamName}"
+        android:textSize="@dimen/text_size_20sp"
+        android:layout_marginLeft="@dimen/dimen_8dp"
+        android:layout_marginRight="@dimen/dimen_8dp"
+        android:layout_toRightOf="@id/imgTeamLogo"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/imgTeamLogo" />
+
+</RelativeLayout>
+
+</layout>
+
